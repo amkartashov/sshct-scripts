@@ -1,7 +1,7 @@
 #!/bin/bash
 
-version=1.13.3
-dist=https://dl.google.com/go/go1.13.3.linux-amd64.tar.gz
+version=1.14.2
+dist=https://dl.google.com/go/go${version}.linux-amd64.tar.gz
 archive=${dist##*/}
 
 
