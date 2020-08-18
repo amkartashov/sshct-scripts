@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=2.7.1
+version=2.8.2
 dist=https://get.pulumi.com/releases/sdk/pulumi-v${version}-linux-x64.tar.gz
 archive=${dist##*/}
 
