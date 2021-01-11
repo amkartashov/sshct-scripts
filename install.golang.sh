@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=1.14.2
+version=1.15.6
 dist=https://dl.google.com/go/go${version}.linux-amd64.tar.gz
 archive=${dist##*/}
 
