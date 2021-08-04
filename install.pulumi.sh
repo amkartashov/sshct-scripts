@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=2.23.1
+version=3.9.1
 dist=https://get.pulumi.com/releases/sdk/pulumi-v${version}-linux-x64.tar.gz
 
 wget -qO- -c ${dist} \
