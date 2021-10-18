@@ -5,7 +5,7 @@ dist=https://releases.hashicorp.com/terraform/${version}/terraform_${version}_li
 archive=${dist##*/}
 
 
-wget -O /tmp/${archive} -c ${dist}
+wget -O /tmp/${archive} -c ${dist} --quiet
 
 unzip -o -d /usr/local/bin /tmp/${archive}
 

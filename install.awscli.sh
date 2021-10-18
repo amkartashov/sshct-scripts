@@ -5,7 +5,7 @@
 version=2.2.32
 dist=https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${version}.zip
 
-wget -O /tmp/awscliv2.zip -c "${dist}"
+wget -O /tmp/awscliv2.zip -c "${dist}" --quiet
 
 unzip -d /tmp /tmp/awscliv2.zip
 
