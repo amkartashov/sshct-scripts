@@ -8,3 +8,12 @@ wget -O ${file} -c ${dist} --quiet
 
 chmod +x ${file}
 
+# install buoyant extension
+version=v0.5.1
+dist=https://github.com/buoyantio/linkerd-buoyant/releases/download/${version}/linkerd-buoyant-${version}-linux-amd64
+file=/usr/local/bin/linkerd-buoyant
+
+wget -O ${file} -c ${dist} --quiet
+
+chmod +x ${file}
+
