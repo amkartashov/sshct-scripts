@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=v3.3.4
+version=v3.7.2
 dist=https://get.helm.sh/helm-${version}-linux-amd64.tar.gz
 archive=${dist##*/}
 
