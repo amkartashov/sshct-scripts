@@ -1,10 +1,14 @@
 #!/bin/bash
 
-version=1.16.8
-dist=https://dl.google.com/go/go${version}.linux-amd64.tar.gz
-archive=${dist##*/}
+source "${BASH_SOURCE%/*}/common.sh"
 
+version=1.18
 
-wget -O /tmp/${archive} -c ${dist} --quiet
+# from https://go.dev/doc/install
 
-tar -C /usr/local -xf /tmp/${archive}
+rm -rf /usr/local/go
+
+wget -qO- \
+    https://dl.google.com/go/go${version}.linux-amd64.tar.gz \
+| tar -xzvf - -C /usr/local/ 
+
