@@ -7,5 +7,10 @@ function install_from_url {
 
     wget -O "${file}" "${url}" --quiet
     chmod +x ${file}
+
+    # additional arguments will be symlinks
+    for l in "${@:3}"; do
+        ln -sf "$2" "/usr/local/bin/${l}"
+    done
 }
 
