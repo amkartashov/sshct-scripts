@@ -1,10 +1,10 @@
 #!/bin/bash
 
-version=v2.2.2
-dist=https://github.com/argoproj/argo-cd/releases/download/${version}/argocd-linux-amd64
-file=/usr/local/bin/argocd
+source "${BASH_SOURCE%/*}/common.sh"
 
-wget -O ${file} -c ${dist} --quiet
+version=v2.3.1
 
-chmod +x ${file}
+install_from_url \
+   https://github.com/argoproj/argo-cd/releases/download/${version}/argocd-linux-amd64 \
+   argocd
 
