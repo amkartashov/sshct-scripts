@@ -1,10 +1,10 @@
 #!/bin/bash
 
-set -e
+source "${BASH_SOURCE%/*}/common.sh"
 
-version=1.25.5
+version=v2.3.3
 
-curl -L "https://github.com/docker/compose/releases/download/${version}/docker-compose-Linux-x86_64" -o /usr/local/bin/docker-compose
-
-chmod +x /usr/local/bin/docker-compose
+install_from_url \
+    https://github.com/docker/compose/releases/download/${version}/docker-compose-linux-x86_64 \
+    docker-compose
 
