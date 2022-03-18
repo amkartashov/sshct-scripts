@@ -1,12 +1,11 @@
 #!/bin/bash
 
-version=v1.10.1
-dist=https://github.com/bazelbuild/bazelisk/releases/download/${version}/bazelisk-linux-amd64
-file=/usr/local/bin/bazel
+source "${BASH_SOURCE%/*}/common.sh"
 
-wget -O ${file} -c ${dist} --quiet
+version=v1.11.0
 
-chmod +x ${file}
-
-cp -a ${file} /usr/local/bin/bazelisk
+install_from_url \
+    https://github.com/bazelbuild/bazelisk/releases/download/${version}/bazelisk-linux-amd64 \
+    bazel \
+    bazelisk
 
