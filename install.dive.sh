@@ -1,10 +1,9 @@
 #!/bin/bash
 
+source "${BASH_SOURCE%/*}/common.sh"
+
 version=0.10.0
-dist=https://github.com/wagoodman/dive/releases/download/v${version}/dive_${version}_linux_amd64.deb
 
-wget -O /tmp/dive.deb -c ${dist} --quiet
+install_from_url_deb \
+    https://github.com/wagoodman/dive/releases/download/v${version}/dive_${version}_linux_amd64.deb
 
-dpkg -i /tmp/dive.deb
-
-rm /tmp/dive.deb
