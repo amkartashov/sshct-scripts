@@ -29,3 +29,11 @@ function install_from_url_tar_gz_flat {
     done
 }
 
+function install_from_url_deb {
+    local url="$1"
+
+    wget -qO /tmp/tmp.deb ${url}
+    dpkg -i /tmp/tmp.deb
+    rm -f /tmp/tmp.deb
+}
+
