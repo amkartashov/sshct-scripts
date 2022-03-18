@@ -1,10 +1,10 @@
 #!/bin/bash
 
-dist=https://download.docker.com/linux/static/stable/x86_64/docker-18.09.6.tgz
-archive=${dist##*/}
+source "${BASH_SOURCE%/*}/common.sh"
 
+version=20.10.9
 
-wget -O /tmp/${archive} -c ${dist} --quiet
-
-tar -C /usr/local/bin --strip-components=1 -xf /tmp/${archive}
+install_from_url_tar_gz_all_strip_components \
+    https://download.docker.com/linux/static/stable/x86_64/docker-${version}.tgz \
+    1
 
