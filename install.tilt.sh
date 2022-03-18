@@ -1,8 +1,10 @@
 #!/bin/bash
 
-version=0.22.9
-dist=https://github.com/tilt-dev/tilt/releases/download/v${version}/tilt.${version}.linux.x86_64.tar.gz
+source "${BASH_SOURCE%/*}/common.sh"
 
-wget -qO- -c ${dist} \
-| tar -xzvf - -C /usr/local/bin/ tilt
+version=0.26.1
+
+install_from_url_tar_gz_flat \
+    https://github.com/tilt-dev/tilt/releases/download/v${version}/tilt.${version}.linux.x86_64.tar.gz \
+    tilt
 
