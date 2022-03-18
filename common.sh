@@ -37,3 +37,11 @@ function install_from_url_deb {
     rm -f /tmp/tmp.deb
 }
 
+function install_from_url_tar_gz_all_strip_components {
+    local url="$1" strip_components="$2"
+
+    wget -qO- ${url} \
+        | tar -xzvf - -C /usr/local/bin/ \
+              --strip-components="${strip_components}"
+}
+
