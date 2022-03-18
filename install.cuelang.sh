@@ -1,9 +1,10 @@
 #!/bin/bash
 
-version=0.3.0-beta.4
-dist=https://github.com/cuelang/cue/releases/download/v${version}/cue_${version}_Linux_x86_64.tar.gz
-binary=cue
+source "${BASH_SOURCE%/*}/common.sh"
 
-wget -qO- -c ${dist} \
-    | tar -xzvf - -C /usr/local/bin/ ${binary}
+version=v0.4.0
+
+install_from_url_tar_gz_flat \
+    https://github.com/cuelang/cue/releases/download/${version}/cue_${version}_linux_amd64.tar.gz \
+    cue
 
