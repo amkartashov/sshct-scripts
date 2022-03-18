@@ -1,6 +1,9 @@
 #!/bin/true
 # to be sourced with `source "${BASH_SOURCE%/*}/common.sh"`
 
+set -o errexit  # Exit immediately if a pipeline ... exits with a non-zero status
+set -o pipefail # ... return value of a pipeline is the value of the last (rightmost) command to exit with a non-zero status
+set -o nounset  # Treat unset variables ... as an error
 
 function install_from_url {
     local url="$1" file="/usr/local/bin/$2"
@@ -10,7 +13,19 @@ function install_from_url {
 
     # additional arguments will be symlinks
     for l in "${@:3}"; do
-        ln -sf "$2" "/usr/local/bin/${l}"
+        ln -sf "${file}" "/usr/local/bin/${l}"
+    done
+}
+
+function install_from_url_tar_gz_flat {
+    local url="$1" file="$2"
+
+    wget -qO- ${url} \
+        | tar -xzvf - -C /usr/local/bin/ ${file}
+
+    # additional arguments will be symlinks
+    for l in "${@:3}"; do
+        ln -sf "${file}" "/usr/local/bin/${l}"
     done
 }
 
