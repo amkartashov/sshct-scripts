@@ -1,8 +1,10 @@
 #!/bin/bash
 
-version=3.24.1
-dist=https://get.pulumi.com/releases/sdk/pulumi-v${version}-linux-x64.tar.gz
+source "${BASH_SOURCE%/*}/common.sh"
 
-wget -qO- -c ${dist} \
-| tar -C /usr/local/bin --strip-components=1 -xpzvf -
+version=3.26.1
+
+install_from_url_tar_gz_all_strip_components \
+    https://get.pulumi.com/releases/sdk/pulumi-v${version}-linux-x64.tar.gz \
+    1
 
